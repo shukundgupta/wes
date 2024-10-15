@@ -30,7 +30,7 @@
                 <div class="welcome-form p-4">
                     <form class="signup-form" autocomplete="off" action="/api/company" method="post">
                         @csrf
-                        <input type="erp_url" value="testing.com">
+                        <input name="erp_url" value="testing.com">
                         <!--Start Step-1-->
                         <div class="step-1">
                             <div class="form-group mb-4 overflow-hidden">
