@@ -37,7 +37,7 @@ class company extends Controller
     public function store(Request $request)
     {
         Company_registration::create($request->all());
-        return response()->view("congrats",array("notice"=>"Record inserted !"))->header('Content-Type','application/json')->setStatusCode(201);
+        return response()->view("congrats",array("notice"=>"We have sent your url and password to your email"))->header('Content-Type','text/html')->setStatusCode(201);
     }
 
     /**

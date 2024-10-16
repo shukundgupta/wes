@@ -35,7 +35,7 @@
                         <div class="step-1">
                             <div class="form-group mb-4 overflow-hidden">
                                 <label class="d-none">Company Name</label>
-                                <input type="text" name="company_name" class="form-control welcome-form-input rounded-0 required" placeholder="COMPANY NAME">
+                                <input type="text" name="company_name" class="form-control welcome-form-input rounded-0 required company-name" placeholder="COMPANY NAME">
                             </div>
                             <div class="form-group mb-4 overflow-hidden">
                                 <label class="d-none">Tagline</label>
@@ -173,4 +173,4 @@
 
 @endsection
 
-<!--start at 5.24 of CH-13-->
+<!--start from 25.16 of CH-14-->

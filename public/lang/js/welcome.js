@@ -63,9 +63,12 @@ function empty_field_validation(first_class,second_class){
 
     //slide if all required field is not empty
     if(tmp.length == input.length && $(".required-notice").length == 0){
-        $("."+first_class).addClass("d-none");
-        $("."+second_class).removeClass("d-none");
-        $("."+second_class).addClass("animate__animated animate__slideInRight");
+
+        company_validation(first_class,second_class);
+
+        //$("."+first_class).addClass("d-none");
+        //$("."+second_class).removeClass("d-none");
+        //$("."+second_class).addClass("animate__animated animate__slideInRight");
     }
 
     //remove required message on input
@@ -114,6 +117,18 @@ function validate_url(input){
     }
 }
 
+//validate company
+function company_validation(first_class,second_class){
+    var company_name = $(".company-name").val();
+    $.ajax({
+        type: "get",
+        url : "/api/company",
+        data: {
+            _token : $("body").attr("token")
+        },
+    });
+}
+
 //slide on back btn click
 $(document).ready(function(){
     $(".step-2-back-btn").click(function(e){
@@ -140,3 +155,4 @@ $(document).ready(function(){
         $(".step-3").addClass("animate__animated animate__slideInRight");
     });
 });
+
