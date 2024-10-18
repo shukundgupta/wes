@@ -122,10 +122,16 @@ function company_validation(first_class,second_class){
     var company_name = $(".company-name").val();
     $.ajax({
         type: "get",
-        url : "/api/company",
+        url : "/api/company"+company_name,
         data: {
             _token : $("body").attr("token")
         },
+        success:function(){
+            alert("200");
+        },
+        error : function(){
+            alert("404");
+        }
     });
 }
 

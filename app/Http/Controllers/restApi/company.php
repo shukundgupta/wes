@@ -13,6 +13,8 @@ class company extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public $data;
     public function index()
     {
         //
@@ -48,7 +50,13 @@ class company extends Controller
      */
     public function show($id)
     {
-        //
+        $this->data = Company_registration::where("company_name",$id)->get();
+        if(count($this->data) != 0){
+            return response(array("notice"=>"Data found !"),200)->header('Content-Type','application/json');
+        }
+        else{
+            return response(array("notice"=>"Data not found !"),404)->header('Content-Type','application/json');
+        }
     }
 
     /**
