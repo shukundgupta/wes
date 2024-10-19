@@ -28,6 +28,7 @@
     border-left: none;
     border-right: none;
     border-top: none;
+    text-transform: lowercase;
 }
 .welcome-form-input:focus{
     box-shadow: none !important;

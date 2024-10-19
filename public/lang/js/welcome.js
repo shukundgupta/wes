@@ -66,9 +66,7 @@ function empty_field_validation(first_class,second_class){
 
         company_validation(first_class,second_class);
 
-        //$("."+first_class).addClass("d-none");
-        //$("."+second_class).removeClass("d-none");
-        //$("."+second_class).addClass("animate__animated animate__slideInRight");
+
     }
 
     //remove required message on input
@@ -119,18 +117,27 @@ function validate_url(input){
 
 //validate company
 function company_validation(first_class,second_class){
-    var company_name = $(".company-name").val();
+    var company_name = $(".company-name").val().trim();
+    var input = document.querySelector(".company-name");
+    var erp_url = window.location+company_name.replace(/ /g,"");
     $.ajax({
         type: "get",
-        url : "/api/company"+company_name,
+        url : "/api/company/"+company_name,
         data: {
             _token : $("body").attr("token")
         },
         success:function(){
-            alert("200");
+            if(input.nextSibling.nodeName == "SMALL"){
+                input.nextSibling.remove();
+            }
+            $(input).addClass("border-danger");
+            $("<small class='text-danger required-notice'><i class='fa fa-warning'></i>Company name already exists !</small>").insertAfter(input);
         },
         error : function(){
-            alert("404");
+            $(".erp-url").val(erp_url);
+            $("."+first_class).addClass("d-none");
+            $("."+second_class).removeClass("d-none");
+            $("."+second_class).addClass("animate__animated animate__slideInRight");
         }
     });
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 15, 2024 at 03:58 AM
+-- Generation Time: Oct 19, 2024 at 04:00 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `company_registrations` (
   `category` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `erp_url` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `company_registrations`
@@ -62,10 +62,7 @@ CREATE TABLE IF NOT EXISTS `company_registrations` (
 
 INSERT INTO `company_registrations` (`id`, `created_at`, `updated_at`, `company_name`, `tagline`, `website`, `company_email`, `founder`, `founder_email`, `contact_number`, `street_address`, `city`, `state`, `country`, `pincode`, `gstin`, `office_starts_at`, `office_ends_at`, `company_estd`, `facebook_url`, `twitter_url`, `whats_app`, `category`, `erp_url`) VALUES
 (1, '2024-10-14 22:15:43', '2024-10-14 22:15:43', 'Komal Chemiequip', 'Manufacturer of Automatic Plating Plants', 'http://komalchemiequip.com', 'info@komalchemiequip.com', 'Shukund Gupta', 'shukundgupta@gmail.com', 7738819993, '709, Hariom Bldg # 4, Mogra Pada, Ambewadi, R.K. Singh Road, Andheri East', 'Mumbai', 'Maharashtra', 'India', 400069, '27AABCK5013D1Z2', '10:15:00', '18:00:00', '2001-01-15', NULL, NULL, 7738819993, 'Education', 'testing.com'),
-(2, '2024-10-14 22:23:22', '2024-10-14 22:23:22', 'Komal Chemiequip', 'Manufacturer of Automatic Plating Plants', 'http://komalchemiequip.com', 'info@komalchemiequip.com', 'Shukund Gupta', 'shukundgupta@gmail.com', 7738819993, '709, Hariom Bldg # 4, Mogra Pada, Ambewadi, R.K. Singh Road, Andheri East', 'Mumbai', 'Maharashtra', 'India', 400069, '27AABCK5013D1Z2', '10:15:00', '18:00:00', '2001-01-15', NULL, NULL, 7738819993, 'Education', 'testing.com'),
-(3, '2024-10-14 22:23:26', '2024-10-14 22:23:26', 'Komal Chemiequip', 'Manufacturer of Automatic Plating Plants', 'http://komalchemiequip.com', 'info@komalchemiequip.com', 'Shukund Gupta', 'shukundgupta@gmail.com', 7738819993, '709, Hariom Bldg # 4, Mogra Pada, Ambewadi, R.K. Singh Road, Andheri East', 'Mumbai', 'Maharashtra', 'India', 400069, '27AABCK5013D1Z2', '10:15:00', '18:00:00', '2001-01-15', NULL, NULL, 7738819993, 'Education', 'testing.com'),
-(4, '2024-10-14 22:23:43', '2024-10-14 22:23:43', 'Komal Chemiequip', 'Manufacturer of Automatic Plating Plants', 'http://komalchemiequip.com', 'info@komalchemiequip.com', 'Shukund Gupta', 'shukundgupta@gmail.com', 7738819993, '709, Hariom Bldg # 4, Mogra Pada, Ambewadi, R.K. Singh Road, Andheri East', 'Mumbai', 'Maharashtra', 'India', 400069, '27AABCK5013D1Z2', '10:15:00', '18:00:00', '2001-01-15', NULL, NULL, 7738819993, 'Education', 'testing.com'),
-(5, '2024-10-14 22:27:20', '2024-10-14 22:27:20', 'Komal Chemiequip', 'Manufacturer of Automatic Plating Plants', 'http://komalchemiequip.com', 'info@komalchemiequip.com', 'Shukund Gupta', 'shukundgupta@gmail.com', 7738819993, '709, Hariom Bldg # 4, Mogra Pada, Ambewadi, R.K. Singh Road, Andheri East', 'Mumbai', 'Maharashtra', 'India', 400069, '27AABCK5013D1Z2', '10:15:00', '18:00:00', '2001-01-15', NULL, NULL, 7738819993, 'Education', 'testing.com');
+(18, '2024-10-18 22:25:38', '2024-10-18 22:25:38', 'komal chemiequip pvt ltd', 'manufacturer', NULL, 'shukundgupta@gmail.com', 'shukund', 'shukundgupta@gmail.com', 7738819993, '709, Hariom Bldg # 4, Mogra Pada, Ambewadi, R.K. Singh Road, Andheri East', 'Mumbai', 'Maharashtra', 'India', 400069, NULL, '11:25:00', '15:30:00', '2014-05-20', NULL, NULL, 7666510624, 'Education', 'http://127.0.0.1:8000/komalchemiequippvtltd');
 
 -- --------------------------------------------------------
 
