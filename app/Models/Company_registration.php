@@ -31,6 +31,7 @@ class Company_registration extends Model
         'twitter_url',
         'whats_app',
         'category',
-        'erp_url'
+        'erp_url',
+        'password'
     ];
 }

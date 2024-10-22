@@ -37,6 +37,7 @@ class CreateCompanyRegistrationsTable extends Migration
             $table->bigInteger('whats_app')->nullable();
             $table->string('category',50);
             $table->string('erp_url');
+            $table->string('password',70);
         });
     }
 

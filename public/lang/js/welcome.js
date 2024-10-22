@@ -135,11 +135,25 @@ function company_validation(first_class,second_class){
         },
         error : function(){
             $(".erp-url").val(erp_url);
+            generate_password();
             $("."+first_class).addClass("d-none");
             $("."+second_class).removeClass("d-none");
             $("."+second_class).addClass("animate__animated animate__slideInRight");
         }
     });
+}
+
+//generate password
+function generate_password(){
+    var password = "!@#a0w1s#3d5de6#y9U5gOhiY-_+hg+teArBn'$%*";
+    var i;
+    var final_pass = " ";
+    for(i=0;i<8;i++){
+        var index = Math.random()*password.length-1;
+        index = Math.floor(index);
+        final_pass += password[index];
+    }
+    $(".password").val(final_pass);
 }
 
 //slide on back btn click
