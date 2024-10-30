@@ -5,6 +5,7 @@ namespace App\Http\Controllers\restApi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Company_registration;
+use App\Mail\emailVerification;
 
 class company extends Controller
 {
@@ -16,6 +17,7 @@ class company extends Controller
 
     public $data;
     public $password;
+    public $generate_password;
     public function index()
     {
         //
@@ -40,10 +42,18 @@ class company extends Controller
     public function store(Request $request)
     {
         $this->data = $request->all();
+        $this->generate_password = $this->data['password'];
         $this->password = array("password"=>bcrypt($this->data['password'])); 
         $this->data = array_replace($this->data,$this->password);
 
         Company_registration::create($this->data);
+
+        //Sending erp_url and password
+        \Mail::to($this->data['company_email'])->send(new emailVerification(array(
+            "erp_url"=>$this->data['erp_url'],
+            "password"=>$this->generate_password
+        )));
+
         return response()->view("congrats",array("notice"=>"We have sent your url and password to your email"))->header('Content-Type','text/html')->setStatusCode(201);
     }
 
