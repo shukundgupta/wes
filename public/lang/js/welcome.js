@@ -119,7 +119,7 @@ function validate_url(input){
 function company_validation(first_class,second_class){
     var company_name = $(".company-name").val().trim();
     var input = document.querySelector(".company-name");
-    var erp_url = window.location+company_name.replace(/ /g,"");
+    var erp_url = window.location+"api/company/"+company_name.replace(/ /g,"");
     $.ajax({
         type: "get",
         url : "/api/company/"+company_name,

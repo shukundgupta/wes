@@ -63,11 +63,15 @@ class company extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Request $request)
     {
         $this->data = Company_registration::where("company_name",$id)->get();
         if(count($this->data) != 0){
-            return response(array("notice"=>"Data found !"),200)->header('Content-Type','application/json');
+            if($request->ajax()){
+                return response(array("notice"=>"Data found !"),200)->header('Content-Type','application/json');
+            }else{
+                echo "success";
+            }
         }
         else{
             return response(array("notice"=>"Data not found !"),404)->header('Content-Type','application/json');
