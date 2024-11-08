@@ -1,3 +1,9 @@
+@if(!session()->has('authentication'))
+    <script>
+        window.location = '/';
+    </script>
+@endif()
+
 @extends("../template.default")
 
 @section("title")

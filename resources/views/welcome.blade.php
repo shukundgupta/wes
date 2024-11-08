@@ -36,6 +36,10 @@
                                 <label class="d-none">Company Name</label>
                                 <input type="text" name="company_name" value="Komal Chemiequip" class="form-control welcome-form-input rounded-0 required company-name" placeholder="COMPANY NAME" maxlength="80">
                             </div>
+                            <div class="form-group mb-4 overflow-hidden">
+                                <label class="d-none">Company Slug</label>
+                                <input type="text" name="company_slug" value="Company Slug" class="form-control welcome-form-input rounded-0 required company-slug" placeholder="COMPANY SLUG" maxlength="80">
+                            </div>
                             <div class="form-group mb-4 overflow-hidden d-none">
                                 <label class="d-none">ERP url</label>
                                 <input type="url" name="erp_url" class="form-control welcome-form-input rounded-0 erp-url" placeholder="ERP URL">
@@ -180,4 +184,4 @@
 
 @endsection
 
-<!--start from 25.50 of CH-14-->
+<!--start from 24.36 of CH-24 PART-2-->

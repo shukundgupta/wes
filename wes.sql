@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 22, 2024 at 04:06 AM
+-- Generation Time: Nov 08, 2024 at 04:03 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -33,6 +33,7 @@ CREATE TABLE IF NOT EXISTS `company_registrations` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `company_name` varchar(85) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `company_slug` varchar(85) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tagline` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `website` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `company_email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -55,15 +56,7 @@ CREATE TABLE IF NOT EXISTS `company_registrations` (
   `erp_url` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(70) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `company_registrations`
---
-
-INSERT INTO `company_registrations` (`id`, `created_at`, `updated_at`, `company_name`, `tagline`, `website`, `company_email`, `founder`, `founder_email`, `contact_number`, `street_address`, `city`, `state`, `country`, `pincode`, `gstin`, `office_starts_at`, `office_ends_at`, `company_estd`, `facebook_url`, `twitter_url`, `whats_app`, `category`, `erp_url`, `password`) VALUES
-(1, '2024-10-21 22:22:01', '2024-10-21 22:22:01', 'Komal Chemiequip', 'Manufacturer', 'http://komalchemiequip.com', 'info@komalchemiequip.com', 'Shukund Gupta', 'shukundgupta@gmail.com', 7666510624, 'Andheri east, Mumbai', 'Mumbai', 'Maharashtra', 'India', 400099, '27AABCK5013D1Z2', '10:21:00', '18:21:00', '1989-01-04', NULL, NULL, 7738819993, 'Education', 'http://127.0.0.1:8000/KomalChemiequip', ' _!3r-BrA'),
-(2, '2024-10-21 22:33:31', '2024-10-21 22:33:31', 'Komal Chemiequip', 'Manufacturer', 'http://komalchemiequip.com', 'info@komalchemiequip.com', 'Shukund Gupta', 'shukundgupta@gmail.com', 7666510624, 'Andheri east, Mumbai', 'Mumbai', 'Maharashtra', 'India', 400099, '27AABCK5013D1Z2', '10:21:00', '18:21:00', '1989-01-04', NULL, NULL, 7738819993, 'Education', 'http://127.0.0.1:8000/KomalChemiequip', '$2y$10$l3poU4.jMUNbrud3ZFjD9uUEV6tQZrNIEwUAXMscLue2oB0ApIGP.');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 

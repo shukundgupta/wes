@@ -119,10 +119,15 @@ function validate_url(input){
 function company_validation(first_class,second_class){
     var company_name = $(".company-name").val().trim();
     var input = document.querySelector(".company-name");
-    var erp_url = window.location+"api/company/"+company_name.replace(/ /g,"");
+    var query = {
+        column_name :  "company_name",
+        data : company_name.replace(/ /g,"")
+    };
+    query = btoa(JSON.stringify(query));
+    var erp_url = window.location+"api/company/"+query;
     $.ajax({
         type: "get",
-        url : "/api/company/"+company_name,
+        url : "/api/company/"+query,
         data: {
             _token : $("body").attr("token")
         },

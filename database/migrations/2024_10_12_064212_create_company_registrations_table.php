@@ -17,6 +17,7 @@ class CreateCompanyRegistrationsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('company_name',85);
+            $table->string('company_slug',85);
             $table->string('tagline',100)->nullable();
             $table->string('website',100)->nullable();
             $table->string('company_email',100);

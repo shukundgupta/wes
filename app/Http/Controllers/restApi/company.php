@@ -18,6 +18,8 @@ class company extends Controller
     public $data;
     public $password;
     public $generate_password;
+
+    public $query;
     public function index()
     {
         //
@@ -63,14 +65,18 @@ class company extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id, Request $request)
+    public function show($query, Request $request)
     {
-        $this->data = Company_registration::where("company_name",$id)->get();
+        $this->query = json_decode(base64_decode($query));
+        
+        $this->data = Company_registration::where($this->query->column_name,$this->query->data)->get();
         if(count($this->data) != 0){
+
             if($request->ajax()){
                 return response(array("notice"=>"Data found !"),200)->header('Content-Type','application/json');
             }else{
-                echo "success";
+                session()->flash("authentication","true");
+                return response()->view("erp.authenticate")->header('Content-Type','text/html')->setStatusCode(200);
             }
         }
         else{
